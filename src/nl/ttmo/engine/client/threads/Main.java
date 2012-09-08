@@ -1,5 +1,6 @@
 package nl.ttmo.engine.client.threads;
 
+import com.jme3.asset.plugins.FileLocator;
 import com.jme3.collision.CollisionResult;
 import com.jme3.collision.CollisionResults;
 import com.jme3.input.controls.ActionListener;
@@ -18,12 +19,11 @@ import nl.ttmo.engine.client.gui.util.AssetManagerSingleton;
 import nl.ttmo.engine.client.gui.util.ClientGuiObjectFactory;
 
 import nl.ttmo.engine.lib.game.world.GameMap;
-import nl.ttmo.engine.lib.gui.GuiGameMapObject;
 import nl.ttmo.engine.lib.world.Location;
 
-import nl.ttmo.engine.messages.client.PlacementMessage;
 import nl.ttmo.engine.messages.client.ClientConnectMessage;
 import nl.ttmo.engine.messages.client.MapLoadMessage;
+import nl.ttmo.engine.messages.client.PlacementMessage;
 import nl.ttmo.engine.messages.client.ResourceUpdateMessage;
 import nl.ttmo.engine.messages.util.MapGridSquareData;
 
@@ -74,6 +74,7 @@ public class Main extends TTMOClientApplication
     public void initApp()
     {
 		AssetManagerSingleton.set(assetManager);
+        assetManager.registerLocator(System.getProperty("user.dir").concat("\\assets"), FileLocator.class);
         new ConnectController(inputManager, audioRenderer, guiViewPort);
     }
 

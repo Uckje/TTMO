@@ -33,7 +33,7 @@ public class MapGridSquare implements Displayable
 	public MapGridSquare(Location location, GuiObjectFactory guiObjectFactory)
 	{
 		this.location = location;
-		this.guiMapGridSquare = (GuiMapGridSquareObject) guiObjectFactory.create(MapGridSquare.class);
+		this.guiMapGridSquare = (GuiMapGridSquareObject) guiObjectFactory.create(MapGridSquare.class, false);
 	}
 
 	/**

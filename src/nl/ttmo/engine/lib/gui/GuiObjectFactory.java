@@ -11,5 +11,5 @@ public interface GuiObjectFactory
 	 * @param gameClass The Class object belonging to a game class
 	 * @return The created gui object
 	 */
-	public GuiObject create(Class<? extends Displayable> gameClass);
+	public GuiObject create(Class<? extends Displayable> gameClass, boolean content);
 }

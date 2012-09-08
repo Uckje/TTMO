@@ -1,7 +1,5 @@
 package nl.ttmo.content.gui.gridSquares;
 
-import nl.ttmo.engine.lib.world.Location;
-
 import com.jme3.material.Material;
 import com.jme3.math.ColorRGBA;
 import com.jme3.math.Vector3f;
@@ -15,6 +13,7 @@ import nl.ttmo.engine.client.gui.world.gridSquares.GuiGridSquare;
 import nl.ttmo.engine.client.gui.world.util.GuiGameMapUtilities;
 
 import nl.ttmo.engine.lib.gui.GuiGridSquareObject;
+import nl.ttmo.engine.lib.world.Location;
 
 /**
  * Gui class for a city type grid square

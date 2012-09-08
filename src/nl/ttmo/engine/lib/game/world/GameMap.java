@@ -53,7 +53,7 @@ public class GameMap implements Displayable
     {
 		mapSize[0] = rangeX;
 		mapSize[1] = rangeZ;
-		this.guiGameMap = (GuiGameMapObject) guiObjectFactory.create(GameMap.class);
+		this.guiGameMap = (GuiGameMapObject) guiObjectFactory.create(GameMap.class, false);
 
         for(int x = 0; x <= rangeX - 1; x++)
         {
@@ -99,8 +99,8 @@ public class GameMap implements Displayable
 	public GridSquare updateGridSquare(Location location, String type, GuiObjectFactory guiObjectFactory)
     {
 		MapGridSquare mapGridSquare = map.get(location);
-		GridSquare gridSquare = (GridSquare) ObjectFactory.createObject("lib", "game.world.gridSquares.GridSquare"+type);
-		gridSquare.initialize(location, (GuiGridSquareObject) guiObjectFactory.create(gridSquare.getClass()));
+		GridSquare gridSquare = (GridSquare) ObjectFactory.createObject("content", "game.gridSquares.GridSquare"+type);
+		gridSquare.initialize(location, (GuiGridSquareObject) guiObjectFactory.create(gridSquare.getClass(), true));
 		mapGridSquare.addGridSquare(gridSquare);
 		if(guiGameMap != null)
 		{

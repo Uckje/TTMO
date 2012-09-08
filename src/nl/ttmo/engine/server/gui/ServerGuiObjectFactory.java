@@ -17,7 +17,8 @@ public class ServerGuiObjectFactory implements GuiObjectFactory
 	 * @param gameClass
 	 * @return Null
 	 */
-	public GuiObject create(Class<? extends Displayable> gameClass)
+    @Override
+	public GuiObject create(Class<? extends Displayable> gameClass, boolean content)
 	{
 		return null;
 	}

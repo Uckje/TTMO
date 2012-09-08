@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<nifty>
+    <screen id="start" controller="nl.ttmo.engine.client.gui.niftygui.ConnectController">
+        <layer id="layer" backgroundColor="#FFF" childLayout="center">
+            <panel id="panel" height="100%" width="100%" backgroundColor="#FFF" childLayout="center">
+				<panel width="300" childLayout="vertical" align="center" valign="center">
+					<text text="Please enter a name and the address to connect to:" color="#000" font="${CALL.getFont()}"/>
+					<control name="textfield" id="name" width="200" height="20" font="${CALL.getFont()}" text="player"/>
+					<panel width="300" childLayout="horizontal" align="center" valign="center">
+						<control name="textfield" id="address" width="200" height="20" font="${CALL.getFont()}" text="localhost"/>
+						<control name="button" label="Connect" id="submit" width="100" height="20" font="${CALL.getFont()}">
+							<interact onClick="connect()"/>
+						</control>
+					</panel>
+					<control name="label" id="messageLabel" font="${CALL.getFont()}" text="" color="#000" width="100%"/>
+				</panel>
+            </panel>
+        </layer>
+    </screen>
+</nifty>

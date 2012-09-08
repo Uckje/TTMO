@@ -53,8 +53,8 @@ public class MapManager
 	 */
 	public boolean updateGridSquare(HostedConnection connection, NetworkThread network, Location location, String type)
     {
-		Resources resources = (Resources) ObjectFactory.createObject("server", "game.resources.gridSquares.Resources" + type);
-        if(!GameMap.getInstance().getMapGridSquare(location).hasType(type) && ((PlacementRules) ObjectFactory.createObject("lib", "game.placementRules.PlacementRules" + type)).check(location) && ResourceManager.getInstance().hasResources(connection, resources.getResourceCost()))
+		Resources resources = (Resources) ObjectFactory.createObject("content", "game.resources.gridSquares.Resources" + type);
+        if(!GameMap.getInstance().getMapGridSquare(location).hasType(type) && ((PlacementRules) ObjectFactory.createObject("content", "game.placementRules.PlacementRules" + type)).check(location) && ResourceManager.getInstance().hasResources(connection, resources.getResourceCost()))
         {
 			ResourceManager.getInstance().substractResources(connection, resources.getResourceCost());
 			ResourceManager.getInstance().addResourceIncreases(connection, resources.getResourceProduction());
@@ -144,7 +144,7 @@ public class MapManager
 		 */
 		if(!gridSquareBase.hasMapObject())
 		{
-			MapObject mapObject = (MapObject) ObjectFactory.createObject("lib", "game.mapObjects.MapObject" + gridSquareBase.gridSquareType);
+			MapObject mapObject = (MapObject) ObjectFactory.createObject("content", "game.mapObjects.MapObject" + gridSquareBase.gridSquareType);
 			mapObject.initialize(this.mapObjectIdCounter++, gridSquareBase);
 			gridSquareBase.setMapObject(mapObject);
 			mapObjects.add(mapObject);

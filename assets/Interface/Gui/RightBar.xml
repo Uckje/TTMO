@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<nifty xmlns="http://nifty-gui.sourceforge.net/nifty-1.3.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://nifty-gui.sourceforge.net/nifty-1.3.xsd http://nifty-gui.sourceforge.net/nifty-1.3.xsd">
+	<screen id="start" controller="nl.ttmo.engine.client.gui.niftygui.RightBarController">
+		<layer id="layer" backgroundColor="#0000" childLayout="center">
+			<panel id="panel" height="100%" width="15%" align="right" valign="center" backgroundColor="#FFF8" childLayout="vertical" visibleToMouse="true">
+				<panel width="100%" height="10%" childLayout="vertical" padding="10px" backgroundColor="#CCC8">
+					<text text="Currently selected type:" font="${CALL.getFont()}" color="#000" align="center"/>
+					<control name="label" text="None" id="typeLabel" color="#000000" font="${CALL.getFont()}" align="center"/>
+				</panel>
+				<panel width="100%" height="*" childLayout="vertical" padding="10px">
+					<control name="button" label="City" font="${CALL.getFont()}" align="left">
+						<interact onClick="setCurrentType(C)"/>
+					</control>
+					<control name="button" label="Road" font="${CALL.getFont()}" align="left">
+						<interact onClick="setCurrentType(R)"/>
+					</control>
+				</panel>
+			</panel>
+		</layer>
+	</screen>
+</nifty>

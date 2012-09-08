@@ -23,12 +23,13 @@ public class ClientGuiObjectFactory implements GuiObjectFactory
 	 * @param gameClass The Class object that belongs to the game class
 	 * @return The gui object belonging to the supplied game class
 	 */
-	public GuiObject create(Class<? extends Displayable> gameClass)
+    @Override
+	public GuiObject create(Class<? extends Displayable> gameClass, boolean content)
 	{
 		String completeName = gameClass.getName();
 		String path = completeName.substring(completeName.lastIndexOf("game") + 5, completeName.lastIndexOf("."));
 		String className = completeName.substring(completeName.lastIndexOf(".") + 1);
-		GuiObject guiObject = (GuiObject) ObjectFactory.createObject("client", "gui." + path + ".Gui" + className);
+		GuiObject guiObject = (GuiObject) ObjectFactory.createObject(content ? "content" : "engine.client", "gui." + path + ".Gui" + className);
 		return guiObject;
 	}
 }
