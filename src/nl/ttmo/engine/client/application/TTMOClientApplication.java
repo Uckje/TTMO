@@ -4,17 +4,14 @@ import com.jme3.app.Application;
 import com.jme3.collision.MotionAllowedListener;
 import com.jme3.input.FlyByCamera;
 import com.jme3.input.KeyInput;
-import com.jme3.input.MouseInput;
 import com.jme3.input.controls.ActionListener;
 import com.jme3.input.controls.KeyTrigger;
-import com.jme3.input.controls.MouseButtonTrigger;
 import com.jme3.math.Vector3f;
 import com.jme3.renderer.RenderManager;
 import com.jme3.renderer.queue.RenderQueue.Bucket;
 import com.jme3.scene.Node;
 import com.jme3.scene.Spatial.CullHint;
 import com.jme3.system.AppSettings;
-import com.jme3.system.JmeContext.Type;
 
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -59,6 +56,7 @@ public abstract class TTMOClientApplication extends Application {
 		 * @param value Value of the inputMapping
 		 * @param tpf Time per frame
 		 */
+        @Override
         public void onAction(String name, boolean value, float tpf) {
             if (!value) {
                 return;
@@ -121,21 +119,14 @@ public abstract class TTMOClientApplication extends Application {
         if (inputManager != null) {
 			MotionAllowedListener motionAllowedListener = new TTMOMotionAllowedListener();
 
-            flyCam = new FlyByCamera(cam);
+            flyCam = new TTMOCamera(cam);
             flyCam.setMoveSpeed(10f);
             flyCam.registerWithInput(inputManager);
 			flyCam.setMotionAllowedListener(motionAllowedListener);
 			flyCam.setDragToRotate(true);
-			inputManager.deleteMapping("FLYCAM_RotateDrag");
-			inputManager.addMapping("FLYCAM_RotateDrag", new MouseButtonTrigger(MouseInput.BUTTON_RIGHT));
-			inputManager.addListener(flyCam, "FLYCAM_RotateDrag");
 
-            if (context.getType() == Type.Display) {
-                inputManager.addMapping(INPUT_MAPPING_EXIT, new KeyTrigger(KeyInput.KEY_ESCAPE));
-            }
-
+            inputManager.addMapping(INPUT_MAPPING_EXIT, new KeyTrigger(KeyInput.KEY_ESCAPE));
             inputManager.addListener(actionListener, INPUT_MAPPING_EXIT);
-
         }
 
         initApp();

@@ -5,7 +5,7 @@ import com.jme3.scene.Node;
 
 import java.util.ArrayList;
 
-import nl.ttmo.engine.client.gui.GuiConstants;
+import nl.ttmo.engine.client.gui.Constants;
 import nl.ttmo.engine.client.gui.world.gridSquares.GuiGridSquare;
 import nl.ttmo.engine.lib.gui.GuiMapGridSquareObject;
 import nl.ttmo.engine.lib.gui.GuiGridSquareObject;
@@ -82,7 +82,7 @@ public class GuiMapGridSquare implements GuiMapGridSquareObject
 			i++;
 		}
 
-		node.setLocalTranslation(location.getX() * GuiConstants.offsetFactor + 0.5f, 0, location.getZ() * GuiConstants.offsetFactor + 0.5f);
+		node.setLocalTranslation(location.getX() * Constants.offsetFactor + 0.5f, 0, location.getZ() * Constants.offsetFactor + 0.5f);
 
         return node;
     }

@@ -11,7 +11,7 @@ import com.jme3.math.Vector3f;
 import com.jme3.scene.Spatial;
 
 import nl.ttmo.engine.client.application.TTMOClientApplication;
-import nl.ttmo.engine.client.gui.GuiConstants;
+import nl.ttmo.engine.client.gui.Constants;
 import nl.ttmo.engine.client.gui.niftygui.ConnectController;
 import nl.ttmo.engine.client.gui.niftygui.LeftBarController;
 import nl.ttmo.engine.client.gui.niftygui.RightBarController;
@@ -217,7 +217,7 @@ public class Main extends TTMOClientApplication
 				CollisionResult collision = results.getClosestCollision();
 				if(collision != null)
 				{
-					Location location = new Location(collision.getGeometry().getParent().getParent().getLocalTranslation().divide(GuiConstants.offsetFactor));
+					Location location = new Location(collision.getGeometry().getParent().getParent().getLocalTranslation().divide(Constants.offsetFactor));
 					NetworkThread.getInstance().send(new PlacementMessage(location.getX(), location.getZ(), currentType));
 				}
 			}

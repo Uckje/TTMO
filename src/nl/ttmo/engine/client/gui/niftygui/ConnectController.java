@@ -14,7 +14,7 @@ import de.lessvoid.nifty.screen.KeyInputHandler;
 import de.lessvoid.nifty.screen.Screen;
 import de.lessvoid.nifty.screen.ScreenController;
 
-import nl.ttmo.engine.client.gui.GuiConstants;
+import nl.ttmo.engine.client.gui.Constants;
 import nl.ttmo.engine.client.gui.util.AssetManagerSingleton;
 import nl.ttmo.engine.client.threads.Main;
 
@@ -99,7 +99,7 @@ public class ConnectController implements ScreenController
 	 */
 	public static String getFont()
 	{
-		return GuiConstants.font;
+		return Constants.font;
 	}
 
 	/**

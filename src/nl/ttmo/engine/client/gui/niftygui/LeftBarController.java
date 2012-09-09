@@ -15,7 +15,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Set;
 
-import nl.ttmo.engine.client.gui.GuiConstants;
+import nl.ttmo.engine.client.gui.Constants;
 import nl.ttmo.engine.client.gui.niftygui.listBox.TTMOResourceEntry;
 import nl.ttmo.engine.client.gui.util.AssetManagerSingleton;
 import nl.ttmo.engine.client.threads.Main;
@@ -91,7 +91,7 @@ public class LeftBarController implements ScreenController
 	 */
 	public static String getFont()
 	{
-		return GuiConstants.font;
+		return Constants.font;
 	}
 
 	/**

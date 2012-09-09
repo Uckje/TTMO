@@ -16,7 +16,7 @@ import nl.ttmo.engine.lib.game.world.MapGridSquare;
 
 import java.util.concurrent.Callable;
 import nl.ttmo.engine.client.gui.util.AssetManagerSingleton;
-import nl.ttmo.engine.client.gui.GuiConstants;
+import nl.ttmo.engine.client.gui.Constants;
 import nl.ttmo.engine.client.gui.world.util.GuiGameMapUtilities;
 import nl.ttmo.engine.client.threads.Main;
 import nl.ttmo.engine.lib.gui.GuiGameMapObject;
@@ -59,8 +59,8 @@ public class GuiGameMap implements GuiGameMapObject
 
 		for(int i = 0; i <= mapSize[0]; i += 5)
 		{
-			start = new Vector3f(i * GuiConstants.offsetFactor + GuiConstants.lineOffset, 0.001f, 0);
-			end = new Vector3f(i * GuiConstants.offsetFactor + GuiConstants.lineOffset, 0.001f, mapSize[1] * GuiConstants.offsetFactor + GuiConstants.lineOffset);
+			start = new Vector3f(i * Constants.offsetFactor + Constants.lineOffset, 0.001f, 0);
+			end = new Vector3f(i * Constants.offsetFactor + Constants.lineOffset, 0.001f, mapSize[1] * Constants.offsetFactor + Constants.lineOffset);
 			line = new Line(start, end);
 			line.setLineWidth(3);
 			spatial = new Geometry("mapLine_x_"+i, line);
@@ -70,8 +70,8 @@ public class GuiGameMap implements GuiGameMapObject
 
 		for(int i = 0; i <= mapSize[1]; i += 5)
 		{
-			start = new Vector3f(0, 0.001f, i * GuiConstants.offsetFactor + GuiConstants.lineOffset);
-			end = new Vector3f(mapSize[0] * GuiConstants.offsetFactor + GuiConstants.lineOffset, 0.001f, i * GuiConstants.offsetFactor + GuiConstants.lineOffset);
+			start = new Vector3f(0, 0.001f, i * Constants.offsetFactor + Constants.lineOffset);
+			end = new Vector3f(mapSize[0] * Constants.offsetFactor + Constants.lineOffset, 0.001f, i * Constants.offsetFactor + Constants.lineOffset);
 			line = new Line(start, end);
 			line.setLineWidth(3);
 			spatial = new Geometry("mapLine_z_"+i, line);
